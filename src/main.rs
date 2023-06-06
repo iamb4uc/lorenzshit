@@ -14,12 +14,12 @@ fn lorenz_attractor(x: f64, y: f64, z: f64) -> (f64, f64, f64) {
     (dx, dy, dz)
 }
 
-fn map_color(value: f64, min_value: f64, max_value: f64) -> u32 {
-    let normalized = (value - min_value) / (max_value - min_value);
-    let red = (255.0 * normalized) as u32;
-    let green = (255.0 * (1.0 - normalized)) as u32;
-    let blue = 0;
-    red << 19 | green << 10 | blue
+fn map_color(val: f64, min_val: f64, max_val: f64) -> u32 {
+    let norm = (val - min_val) / (max_val - min_val);
+    let r = (255.0 * norm) as u32;
+    let g = (255.0 * (1.0 - norm)) as u32;
+    let b = 0;
+    r << 19 | g << 10 | b
 }
 
 fn main() {
